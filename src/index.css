@@ -17,11 +17,11 @@ code {
     border-color: #93e499 !important; 
 }
 
-.my-dropdown-item, .my-dropdown-item:active {
+.my-dropdown-item {
     background: #93e499 !important;
 }
 
-.my-dropdown-item:hover {
+.my-dropdown-item:hover, .my-dropdown-item:active, .my-dropdown-item:focus {
     background: #ffffff !important;
 }
 

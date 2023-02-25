@@ -10,7 +10,7 @@ const AllocationForm = (props) => {
 
     const submitEvent = () => {
         if(cost > remaining) {
-            alert("The value cannot exceed remiaing funds £"+remaining);
+            alert("The value cannot exceed remiaing funds "+currency+remaining);
             setCost("");
             return;
         }
