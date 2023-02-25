@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { TiDelete } from 'react-icons/ti';
+import { BsFillPlusCircleFill } from "react-icons/bs";
+import { BsFillDashCircleFill } from "react-icons/bs";
 import { AppContext } from '../context/AppContext';
 
 const ExpenseItem = (props) => {
-    const { dispatch } = useContext(AppContext);
+    const { dispatch, currency } = useContext(AppContext);
 
     const handleDeleteExpense = () => {
         dispatch({
@@ -24,12 +26,25 @@ const ExpenseItem = (props) => {
         });
     };
 
+    const decreaseAllocation = (name) => {
+        const expense = {
+            name: name,
+            cost: 10
+        };
+
+        dispatch({
+            type: 'RED_EXPENSE',
+            payload: expense
+        });
+    };
+
     return (
         <tr>
             <td>{props.name}</td>
-            <td>£{props.cost}</td>
-            <td><button onClick={event=> increaseAllocation(props.name)}>+</button></td>
-            <td><TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
+            <td>{currency}{props.cost}</td>
+            <td><BsFillPlusCircleFill size='1.5em' style={{ cursor:'pointer', color:'#4fac5c' }} onClick={event=> increaseAllocation(props.name)}>+</BsFillPlusCircleFill></td>
+            <td><BsFillDashCircleFill size='1.5em' style={{ cursor:'pointer', color:'#af2419' }} onClick={event=> decreaseAllocation(props.name)}>+</BsFillDashCircleFill></td>
+            <td><TiDelete size='1.5em' cursor='pointer' onClick={handleDeleteExpense}></TiDelete></td>
         </tr>
     );
 };

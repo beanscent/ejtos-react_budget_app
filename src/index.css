@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.my-dropdown button, .my-dropdown button:hover, .my-dropdown button:active, .my-dropdown button:focus {
+    background: #93e499 !important;
+    border-color: #93e499 !important; 
+}
+
+.my-dropdown-item, .my-dropdown-item:active {
+    background: #93e499 !important;
+}
+
+.my-dropdown-item:hover {
+    background: #ffffff !important;
+}
+
+.dropdown-menu {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
